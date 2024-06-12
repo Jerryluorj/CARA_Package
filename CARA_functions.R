@@ -167,8 +167,6 @@ ZhaoNew = function(PredictiveCov ,
       data[r, "t"] = sample(c(1, 0), 1, prob = c(p, 1 - p))
     }
 
-
-    # py=1/(1+exp(-(0.5+1*data[r,1]-0.5*data[r,1]*data[r,5]+0.5*data[r,2]+0.5*data[r,3])))
     if (isResponseBinary) {
       py = 1 / (1 + exp(-(
         beta[1] * data[r, "t"] + beta[2] * (1 - data[r, "t"]) + beta[3] * Xn + beta[4] * Xn * data[r, "t"] +
